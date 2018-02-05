@@ -8,7 +8,7 @@ export default class AsccaTokenClient {
   }
 
   getToken(cardNo, cardExpire) {
-    fetch('https://test.ascca.jp:2443/ccstokensv/api/requestToken', {
+    return fetch('https://test.ascca.jp:2443/ccstokensv/api/requestToken', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
