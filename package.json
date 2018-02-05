@@ -1,0 +1,33 @@
+{
+  "name": "ascca-token-client",
+  "version": "1.0.0",
+  "description": "API client for token processing by connecting to assca",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel src --out-dir lib --source-maps inline",
+    "watch": "babel src --out-dir lib --watch --source-maps inline",
+    "test": "mocha test/*.js",
+    "prepublish": "npm run build"
+  },
+  "directories": {
+    "test": "test/"
+  },
+  "keywords": [
+    "tokenize",
+    "api-client"
+  ],
+  "author": "Yuta Kurotaki",
+  "license": "MIT",
+  "dependencies": {
+    "es6-promise": "^4.2.4",
+    "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-power-assert": "^2.0.0",
+    "babel-register": "^6.26.0",
+    "mocha": "^5.0.0",
+    "power-assert": "^1.4.4"
+  }
+}
