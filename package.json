@@ -13,7 +13,7 @@
     "test": "test/"
   },
   "keywords": [
-    "tokenize",
+    "tokenization",
     "api-client"
   ],
   "author": "Yuta Kurotaki",
