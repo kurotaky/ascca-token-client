@@ -3,12 +3,13 @@
 import fetch from 'isomorphic-fetch'
 
 export default class AsccaTokenClient {
-  constructor(shopId) {
+  constructor(shopId, options = {production: false}) {
     this.shopId = shopId;
+    this.url = options.production ? 'https://secure.ascca.jp:2443' : 'https://test.ascca.jp:2443';
   }
 
   getToken(cardNo, cardExpire) {
-    return fetch('https://test.ascca.jp:2443/ccstokensv/api/requestToken', {
+    return fetch(this.url + '/ccstokensv/api/requestToken', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
