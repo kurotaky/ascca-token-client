@@ -25,6 +25,10 @@ export default class AsccaTokenClient {
       return json;
     }).catch(function (error) {
       console.log('request failed', error);
-    })
-  }
+    });
+  };
+
+  url() {
+    return this.url;
+  };
 }

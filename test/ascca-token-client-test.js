@@ -35,4 +35,16 @@ describe("ascca-token-client-test", function () {
       });
     });
   });
+
+  describe("#url()", () => {
+    it("test url returns", () => {
+      var asccaTokenClient = new AsccaTokenClient("testpg0000000");
+      assert(asccaTokenClient.url == 'https://test.ascca.jp:2443');
+    });
+
+    it("production url returns", () => {
+      var asccaTokenClient = new AsccaTokenClient("testpg0000000", { production: true });
+      assert(asccaTokenClient.url == 'https://secure.ascca.jp:2443');
+    });
+  });
 });
