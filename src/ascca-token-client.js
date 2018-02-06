@@ -16,13 +16,13 @@ export default class AsccaTokenClient {
       body: JSON.stringify({
         spid: this.shopId,
         cardNo: cardNo,
-        cardExpire:cardExpire
+        cardExpire: cardExpire
       })
-    }).then(function(response) {
+    }).then(function (response) {
       return response.json();
-    }).then(function(json) {
+    }).then(function (json) {
       return json;
-    }).catch(function(error) {
+    }).catch(function (error) {
       console.log('request failed', error);
     })
   }
