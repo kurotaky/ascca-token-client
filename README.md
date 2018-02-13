@@ -15,7 +15,7 @@ var atc = new AsccaTokenClient('testshopid000');
 atc.getToken('4111111111111111', '2210').then((value) => {
   console.log(value);
 }, (error) => {
-  console.error("error:", error.message);
+  console.error("error:", error);
 });
 ```
 
