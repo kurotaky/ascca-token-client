@@ -38,4 +38,4 @@ open sample.html
 Try putting your card number and expiration date in form.
 
 ## License
-MIT
+[MIT](https://github.com/kurotaky/ascca-token-client/blob/master/LICENSE)
