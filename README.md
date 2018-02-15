@@ -11,17 +11,46 @@ npm install ascca-token-client
 ```
 
 ## Usage
-### getToken(shopId, options = {production: false})
-```js
-var AsccaTokenClient = require("ascca-token-client").AsccaTokenClient;
+### class AsccaTokenClient
+Client for tokenization.
+Initialization by passing shopId and options.
 
-var asccaTokenClient = new AsccaTokenClient('testshopid000');
+```js
+const AsccaTokenClient = require("ascca-token-client").AsccaTokenClient;
+const asccaTokenClient = new AsccaTokenClient(shopId, options = {production: false});
+```
+
+#### getToken(cardNumber, cardExpired)
+
+Passing cardNumber and cardExpired will return a token.
+The cardExpired(expiration date) format is "YYMM".
+
+```js
+const asccaTokenClient = new AsccaTokenClient('testshopid000000');
+
 asccaTokenClient.getToken('4111111111111111', '2210').then((value) => {
   console.log(value);
 }, (error) => {
   console.error("error:", error);
 });
 ```
+
+#### url
+
+The production or test URL will be returned.
+
+```js
+const asccaTokenClient1 = new AsccaTokenClient("testshopid000000");
+
+// test URL is returned
+asccaTokenClient1.url;
+
+const asccaTokenClient2 = new AsccaTokenClient("testshopid000000", options = {production: true});
+
+// production URL is returned
+asccaTokenClient2.url;
+```
+
 
 ## Sample
 ### For browsers.
