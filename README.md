@@ -1,4 +1,7 @@
 # ascca-token-client
+
+<a href="https://www.npmjs.com/package/ascca-token-client" title="npm"><img src="http://img.shields.io/npm/v/ascca-token-client.svg?style=flat-square"></a>
+
 AsccaTokenClient is a JavaScript library for GMO Payment Gateway token settlement.
 
 ## Installation
