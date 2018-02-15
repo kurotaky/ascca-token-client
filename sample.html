@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>ascca-token-client sample for browser</title>
+  </head>
+  <body>
+    <h1>ascca-token-client sample</h1>
+    <form id='cardForm' action='' method='post'>
+      <p>Card Number: <input type='text' value='' name='cardNumber' id='cardNumber' placeholder="4111111111111111"/></p>
+      <p>Card Expired: <input type='text' value='' name='cardExpire' id='cardExpire' placeholder="YYMM"/></p>
+      <p><input type='button' value='submit' onclick='pay()' /></p>
+    </form>
+    <script src="dist/bundle.js"></script>
+    <script type='text/javascript'>
+      function pay() {
+        const asccaTokenClient= new AsccaTokenClient("testpg0000000"); // Please set your shopid.
+        cardNumber = document.getElementById('cardNumber').value;
+        cardExpire = document.getElementById('cardExpire').value;
+        asccaTokenClient.getToken(cardNumber, cardExpire).then(function (value) {
+          console.log(value);
+          // You can send it to your server :)
+          //
+          // document.getElementById('cardForm').submit();
+        }).catch(function (error) {
+          console.log(error);
+        });
+        document.getElementById('cardNumber').value = "";
+        document.getElementById('cardExpire').value = "";
+      }
+    </script>
+  </body>
+</html>

@@ -32,3 +32,7 @@ export default class AsccaTokenClient {
     return this.url;
   };
 }
+
+if (typeof window != "undefined") {
+  !window.AsccaTokenClient && (window.AsccaTokenClient = AsccaTokenClient);
+}
