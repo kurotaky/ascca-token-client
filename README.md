@@ -14,13 +14,27 @@ npm install ascca-token-client
 ```js
 var AsccaTokenClient = require("ascca-token-client").AsccaTokenClient;
 
-var atc = new AsccaTokenClient('testshopid000');
-atc.getToken('4111111111111111', '2210').then((value) => {
+var asccaTokenClient = new AsccaTokenClient('testshopid000');
+asccaTokenClient.getToken('4111111111111111', '2210').then((value) => {
   console.log(value);
 }, (error) => {
   console.error("error:", error);
 });
 ```
+
+## Sample
+### For browsers.
+
+```
+git clone git@github.com:kurotaky/ascca-token-client.git
+cd ascca-token-client
+npm i
+npm run build
+npm run webpack
+open sample.html
+```
+
+Try putting your card number and expiration date in form.
 
 ## License
 MIT
