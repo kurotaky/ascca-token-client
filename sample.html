@@ -17,7 +17,9 @@
         cardExpire = document.getElementById('cardExpire').value;
         asccaTokenClient.getToken(cardNumber, cardExpire).then(function (value) {
           console.log(value);
-          // You can send it to your server.
+          // You can send it to your server :)
+          //
+          // document.getElementById('cardForm').submit();
         }).catch(function (error) {
           console.log(error);
         });
