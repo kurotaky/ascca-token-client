@@ -1,5 +1,5 @@
-"use strict";
-import AsccaTokenClient from "./ascca-token-client";
+'use strict'
+import AsccaTokenClient from './ascca-token-client'
 module.exports = {
   AsccaTokenClient
 }
