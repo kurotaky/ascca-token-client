@@ -1,5 +1,6 @@
 'use strict'
 
+import promise from 'es6-promise/auto'
 import fetch from 'isomorphic-fetch'
 
 export default class AsccaTokenClient {
