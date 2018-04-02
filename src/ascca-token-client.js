@@ -24,8 +24,6 @@ export default class AsccaTokenClient {
       return response.json()
     }).then(function (json) {
       return json
-    }).catch(function (error) {
-      console.log('request failed', error)
     })
   };
 
