@@ -6,7 +6,7 @@ import fetch from 'isomorphic-fetch'
 export default class AsccaTokenClient {
   constructor (shopId, options = {production: false}) {
     this.shopId = shopId
-    this.url = options.production ? 'https://secure.ascca.jp:2443' : 'https://test.ascca.jp:2443'
+    this.url = options.production ? 'https://ccstoken.secure.ascca.jp' : 'https://ccstoken.test.ascca.jp'
   }
 
   getToken (cardNo, cardExpire) {

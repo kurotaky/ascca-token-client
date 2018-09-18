@@ -6,7 +6,7 @@ import AsccaTokenClient from '../src/ascca-token-client';
 describe("ascca-token-client-test", function () {
   describe("#getToken()", () => {
     describe("when errCode 00 returns", () => {
-      const scope = nock("https://test.ascca.jp:2443")
+      const scope = nock("https://ccstoken.test.ascca.jp")
         .post("/ccstokensv/api/requestToken")
         .reply(200, { errCode: '00', token: '0841905582174001', cardEndNo: '1111' });
 
@@ -21,7 +21,7 @@ describe("ascca-token-client-test", function () {
     });
 
     describe("when errCode 43 returns", () => {
-      const scope = nock("https://test.ascca.jp:2443")
+      const scope = nock("https://ccstoken.test.ascca.jp")
         .post("/ccstokensv/api/requestToken")
         .reply(200, { errCode: '43', token: null, cardEndNo: null });
 
@@ -39,12 +39,12 @@ describe("ascca-token-client-test", function () {
   describe("#url()", () => {
     it("test url returns", () => {
       var asccaTokenClient = new AsccaTokenClient("testpg0000000");
-      assert(asccaTokenClient.url == 'https://test.ascca.jp:2443');
+      assert(asccaTokenClient.url == 'https://ccstoken.test.ascca.jp');
     });
 
     it("production url returns", () => {
       var asccaTokenClient = new AsccaTokenClient("testpg0000000", { production: true });
-      assert(asccaTokenClient.url == 'https://secure.ascca.jp:2443');
+      assert(asccaTokenClient.url == 'https://ccstoken.secure.ascca.jp');
     });
   });
 });
